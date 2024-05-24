@@ -1,0 +1,19 @@
+<div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+  ">
+  <app-text-input (usernameChange)="receiveUsername($event)"></app-text-input>
+  <br />
+  <br />
+  <button class="submit-button" (click)="onSubmit()">Inspect</button>
+</div>
+
+<div class="user-data-container" *ngIf="showProfile">
+  <app-profile *ngIf="userData" [userData]="userData"></app-profile>
+</div>
+
+<div class="error-data-container" *ngIf="errorMessage">
+  <app-error *ngIf="errorMessage" [errorMessage]="errorMessage"></app-error>
+</div>

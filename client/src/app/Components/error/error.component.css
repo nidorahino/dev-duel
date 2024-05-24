@@ -1,0 +1,15 @@
+.error-container {
+    width: 40vw;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  .error-container h1 {
+    font-size: 18px;
+    color: #f44336;
+    margin: 0;
+  }

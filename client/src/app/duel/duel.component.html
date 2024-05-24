@@ -1,0 +1,34 @@
+<div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+  ">
+  <div style="display: flex; flex-direction: row">
+    <app-text-input (usernameChange)="receiveUsernameOne($event)"></app-text-input>
+    <p style="margin: 2vh 20px">VS</p>
+    <app-text-input (usernameChange)="receiveUsernameTwo($event)"></app-text-input>
+  </div>
+  <br />
+  <br />
+  <button class="submit-button" (click)="onSubmit()">Duel</button>
+</div>
+
+<div class="winner-container" *ngIf="winner">
+  <h1>Winner: {{ winner }}</h1>
+  <br>
+  <h1>Stat Breakdown: winner (score)</h1>
+  <div *ngFor="let stat of keyStats">
+    <p>{{ stat.key }}: {{ stat.winner }} ({{ stat.highScore }})</p>
+  </div>
+</div>
+<div class="profile-container">
+  <ng-container *ngFor="let profile of userProfiles">
+    <app-profile [userData]="profile"></app-profile>
+  </ng-container>
+</div>
+
+
+<div class="error-data-container" *ngIf="errorMessage">
+  <app-error *ngIf="errorMessage" [errorMessage]="errorMessage"></app-error>
+</div>

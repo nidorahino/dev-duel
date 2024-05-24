@@ -1,0 +1,10 @@
+<div class="user-data-container" *ngIf="userData">
+  <div class="avatar-container">
+    <img [src]="userData.avatar_url" alt="User Avatar">
+  </div>
+  <div *ngFor="let key of dataKeys">
+    <div *ngIf="key !== 'avatar_url'">
+      <p><strong>{{ key }}:</strong> {{ userData[key] }}</p>
+    </div>
+  </div>
+</div>
